@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachable Machine Integration</title>
+</head>
+<body>
+    <h1>Teachable Machine Integration</h1>
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+    <div id="error-container" style="color: red;"></div>
+
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js" crossorigin="anonymous"></script>
+    <!-- Load the Teachable Machine library -->
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js" crossorigin="anonymous"></script>
+    <!-- Load your app -->
+    <script type="module" src="app.js"></script>
+
+    <script>
+    window.onerror = function(message, source, lineno, colno, error) {
+        console.error('An error occurred:', message, source, lineno, colno, error);
+        document.getElementById('error-container').textContent = 'An error occurred: ' + message;
+        return true;
+    };
+    </script>
+</body>
+</html>
+
